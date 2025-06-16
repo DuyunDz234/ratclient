@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minecraft RAT Client</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: backgroundShift 12s ease infinite;
+      color: #00ff9f;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: flicker 2s infinite alternate;
+      text-shadow: 0 0 5px #00ff9f, 0 0 10px #00ff9f, 0 0 20px #00ff9f;
+    }
+
+    p.description {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #ccc;
+      animation: typing 5s steps(40, end) forwards;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ff9f;
+      width: 0;
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: 1em;
+      border: none;
+      background-color: #00ff9f;
+      color: black;
+      border-radius: 10px;
+      cursor: pointer;
+      animation: glow 2s infinite alternate, pop 0.5s ease-out;
+    }
+
+    button:hover {
+      background-color: #00ffaa;
+      transform: scale(1.05);
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 5px #00ff9f;
+      }
+      100% {
+        box-shadow: 0 0 20px #00ff9f;
+      }
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.95); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Minecraft RAT Client</h1>
+    <p class="description">Injecting payload to target Minecraft...</p>
+    <button onclick="troll()">Download Client</button>
+  </div>
+  <audio id="rickroll" src="https://www.myinstants.com/media/sounds/rickroll.mp3"></audio>
+  <script>
+    function troll() {
+      const audio = document.getElementById("rickroll");
+      audio.play();
+      alert("🔥 You've been RICKROLLED! This is just a prank site, no malware here.");
+      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+    }
+  </script>
+</body>
+</html>
